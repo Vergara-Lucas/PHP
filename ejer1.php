@@ -113,7 +113,7 @@ Hobbies:Programar,Netflix,Fútbol.
     
     ?>    
     </div>
-    <h2>Ejercicio 4</h2>
+    <h2>Ejercicio 5</h2>
     <p>Generar dos variables, una $nombreDeUsuario y $ContraseniaDeUsuario, ambos strings. Validar que el usuario corresponda a "admin" y la contraseña a "1234". De ser asi, que imprima "Bienvenido!", sino, que imprima que hay un error en el login.
 
  
@@ -122,13 +122,6 @@ a.    Modificar al ejercicio anterior, y agregar los "else" necesarios para pode
     <div style="text-align:center;border: solid;">
     <h3 style="border: solid;margin-top: 0%;">resultado</h3>
     <?php
-    $rand1al100=rand(1,100);
-    echo("Numero:$rand1al100---------");
-    if($rand1al100>50){
-        echo("El numero es mayor a 50");
-    }else{
-        echo("El numero es menor a 50");
-    }
     
     ?>    
     </div>
