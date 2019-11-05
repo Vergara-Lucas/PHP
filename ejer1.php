@@ -20,6 +20,7 @@ Hobbies:Programar,Netflix,Fútbol.
 <p>3.Agregar un campo Dirección con la el valor “Winterfell”</p>
 <p>4.Agregar un cuarto hobby.</p>
 </p>
+<div style="text-align:center;border: solid;">
 <?php
 // $persona[
     //     "Nombre" => "Jon",
@@ -40,6 +41,7 @@ Hobbies:Programar,Netflix,Fútbol.
     
     var_dump($persona);
     ?>
+</div>
     <h1>Condicionles</h1>
     <h2>Ejercicio 1</h2>
     <p>Definir dos variable con números y compararlos con un if para decidir cuál número
@@ -115,16 +117,166 @@ Hobbies:Programar,Netflix,Fútbol.
     </div>
     <h2>Ejercicio 5</h2>
     <p>Generar dos variables, una $nombreDeUsuario y $ContraseniaDeUsuario, ambos strings. Validar que el usuario corresponda a "admin" y la contraseña a "1234". De ser asi, que imprima "Bienvenido!", sino, que imprima que hay un error en el login.
-
- 
-
-a.    Modificar al ejercicio anterior, y agregar los "else" necesarios para poder identificar si el error esta en el usuario, la contraseña, o si alguno de los campos está vacío aún.</p>
+    </p>
+    <p>a.    Modificar al ejercicio anterior, y agregar los "else" necesarios para poder identificar si el error esta en el usuario, la contraseña, o si alguno de los campos está vacío aún.</p>
+    </p>
     <div style="text-align:center;border: solid;">
     <h3 style="border: solid;margin-top: 0%;">resultado</h3>
     <?php
-    
-    ?>    
+        //probar con una entrada luego
+        $nombreDeUsuario="admin";
+        $ContraseniaDeUsuario="1234";
+
+        if($nombreDeUsuario=="" || $ContraseniaDeUsuario==""){//corrobora que todos los campos esten completos
+            echo("Complete todos los campos");
+        }else if($nombreDeUsuario == "admin" && $ContraseniaDeUsuario == "1234"){//verifica que el user y pass es correcto
+            echo("Bienvenido!");
+        }else if($ContraseniaDeUsuario!="1234"){//mal contraseña
+            echo("Ingreso mal la contraseña");
+           
+        }else{
+            echo("Ingreso mal la usuario");//mal usuario
+        }
+    ?>   
     </div>
+    <h2>Ejercicio 6</h2>
+    <p>6.    Tendremos 3 variables: edad (un número), casado (un booleano) y sexo (string que puede ser “Masculino”, “Femenino” u “Otro”). Si la persona es mayor a 18 años y no está casado se imprimirá el mensaje “Bienvenido”.</p>
+    <p>a.    Modificaremos al ejercicio anterior para que también imprima bienvenido si el sexo es “Otro” sin importar el resto de las condiciones.</p>
+    <div style="text-align:center;border: solid;">
+    <h3 style="border: solid;margin-top: 0%;">resultado</h3>
+    <?php
+        $edad=rand(0,60);
+        $casado=false;
+        $sexo="Masculino";
+        if($edad>=18 && !$casado){
+            echo("Bienvenido");
+        }else if($sexo=="Otro"){
+            echo("Bienvenido");    
+        }else{
+            echo("No podes pasar bro");
+        }
+    ?>   
+    </div>
+    <h2>Ejercicio 7</h2>
+    <p>7.Definir una variable que se llame cantidadDeAlumnos que contenga un número. Luego, escribir el siguiente código: (sin copiar y pegar!!).</p>
+    <p>a.        ¿Qué termina imprimiendo?.</p>
+    <p>Probar con los valores -100, -1, 0, 1 y 100 para cantidadDeAlumnos</p>
+    <div style="text-align:center;border: solid;">
+    <h3 style="border: solid;margin-top: 0%;">resultado</h3>
+    <?php
+        $cantidadDeAlumnos=rand(-100,100);
+        if ($cantidadDeAlumnos) {
+
+            echo "$cantidadDeAlumnos true";
+            
+            }
+            
+            else {
+            
+            echo "$cantidadDeAlumnos false";
+            
+            }
+    ?>   
+    </div>
+    <h2>Ejercicio 8</h2>
+    <p>
+    8.        Definir una variable $numero con un número. Imprimir “El número es par” si lo es o “El número es impar” si no lo es. Se pide resolver este ejercicio con un if ternario (operadores  ?  :)
+    </p>
+    <div style="text-align:center;border: solid;">
+    <h3 style="border: solid;margin-top: 0%;">resultado</h3>
+    <?php
+        $numero = rand(-100,100);
+        if($numero%2 == 0){
+            echo("el numero $numero es par");
+        }else{
+            echo("el numero $numero es impar");
+        }
+    ?>   
+    </div>
+    
+    
+    <h2>Ejercicio 9</h2>
+    <p>
+        8.        Definir una variable $numero con un número. Imprimir “El número es par” si lo es o “El número es impar” si no lo es. Se pide resolver este ejercicio con un if ternario (operadores  ?  :)
+    </p>
+    <div style="text-align:center;border: solid;">
+    <h3 style="border: solid;margin-top: 0%;">resultado</h3>
+    <?php
+        $nota = rand(0,10);
+        switch ($nota) {
+            case 10:
+                echo("te sacaste $nota Excelente!!!!!");
+                break;
+            case 9:
+                echo("te sacaste $nota MUY bien!!");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                echo("te sacaste $nota Bien!!!");
+                break;
+            case 4:
+            case 5:
+            echo("te sacaste $nota zafamos");
+                break;
+            case 3:
+            case 2:
+            case 1:
+            case 0:
+                echo("te sacaste $nota zafamos");
+                    break;
+        }
+    ?>   
+    </div>
+    <h2>Ejercicio 10</h2>
+    <p>
+    10. Agregar al switch anterior un mensaje en caso de que la nota no sea un número del 1 al 10 diciendo “El número no es válido”. Punto extra: ¿Probaste con números negativos?
+    </p>
+    <div style="text-align:center;border: solid;">
+    <h3 style="border: solid;margin-top: 0%;">resultado</h3>
+    <?php
+        $nota = rand(-10,10);
+        switch ($nota) {
+            case 10:
+                echo("te sacaste $nota Excelente!!!!!");
+                break;
+            case 9:
+                echo("te sacaste $nota MUY bien!!");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                echo("te sacaste $nota Bien!!!");
+                break;
+            case 4:
+            case 5:
+            echo("te sacaste $nota zafamos");
+                break;
+            case 3:
+            case 2:
+            case 1:
+            case 0:
+                echo("te sacaste $nota zafamos");
+                    break;
+            default: 
+                echo("El número $nota no es válido");
+                break;
+        }
+        // if($nota==10){
+        //     echo("te sacaste $nota Excelente!!!!!");
+        // }else if($nota==9){
+        //     echo("te sacaste $nota MUY bien!!");
+        // }else if($nota>=6 && $nota<=8){
+        //     echo("te sacaste $nota Bien!!!");
+        // }else if($nota>=4 && $nota<=5){
+        //     echo("te sacaste $nota zafamos");
+        // }else{
+        //     echo("te sacaste $nota desaprobado");
+        // }
+    ?>   
+    </div>
+    
+    
     
     </body>
     </html>
